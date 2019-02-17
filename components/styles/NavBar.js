@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 
 export const NavBar = styled.nav`
-	background-color: ${props => props.theme.colors.white};
-	color: ${props => props.theme.colors.primary};
+	color: ${props => props.theme.colors.gray};
 
 	ul {
 		display: flex;
@@ -22,7 +21,7 @@ export const NavBar = styled.nav`
 
 export const SectionTitle = styled.li`
 	padding: 20px 10px;
-	font-size: 30px;
+	font-size: 15px;
 	color: ${props =>
 		props.active
 			? props.theme.colors.secondary
@@ -42,7 +41,7 @@ export const SectionTitle = styled.li`
 		bottom: 0px;
 		left: 0;
 		width: 100%;
-		height: 5px;
+		height: 2px;
 		background: ${props => props.theme.colors.secondary};
 		content: '';
 		transition: transform 0.3s;
