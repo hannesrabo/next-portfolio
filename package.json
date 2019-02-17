@@ -1,0 +1,38 @@
+{
+	"name": "hrabo-portfolio",
+	"scripts": {
+		"start": "next",
+		"build": "next build ",
+		"export": "next export",
+		"ci-build": "npm-run-all build export"
+  },
+	"dependencies": {
+    "next": "^8.0.1",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+		"styled-components": "^4.1.3"
+	},
+	"devDependencies": {
+		"prettier": "^1.16.4"
+	},
+	"prettier": {
+		"semi": false,
+		"useTabs": true,
+		"singleQuote": true,
+		"tabWidth": 4
+	},
+	"babel": {
+		"presets": [
+			"next/babel"
+		],
+		"plugins": [
+			[
+				"styled-components",
+				{
+					"ssr": true
+				}
+			]
+		]
+	}
+}
+

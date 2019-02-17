@@ -1,0 +1,9 @@
+# Next build artifacts
+.next
+out
+
+# Dependencies
+node_modules
+
+# Log files
+*.log
