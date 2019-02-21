@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Page from '../components/Page'
-import { Card } from '../components/Card'
 
 const NavContainer = styled.div`
 	width: 30%;
@@ -13,18 +12,16 @@ const HeaderContainer = styled.div`
 	height: 150px;
 `
 
-class index extends Component {
+class contact extends Component {
 	render() {
 		return (
-			<Page currentPage="/">
+			<Page currentPage="/contact">
 				<div>
-					<Card>
-						<p>This is some content.</p>
-					</Card>
+					<p>Contacts you know.</p>
 				</div>
 			</Page>
 		)
 	}
 }
 
-export default index
+export default contact
