@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Page from '../components/Page'
+import Page from '../components/layout/Page'
 
 const NavContainer = styled.div`
 	width: 30%;

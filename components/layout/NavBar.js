@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const NavBar = styled.nav`
 	width: 40%;
+	margin-left: auto;
 
 	ul {
 		display: flex;
@@ -25,14 +26,18 @@ export const SectionTitle = styled.li`
 	position: relative;
 
 	a {
-		padding: 15px 5px;
+		padding: 8px;
+		font-size: 20px;
 		display: block;
 		text-decoration: none;
-		color: ${props => props.theme.colors.text};
+		color: ${props =>
+			props.active
+				? `${props.theme.colors.text_bold}`
+				: `${props.theme.colors.text}`};
 		${props =>
 			props.active
 				? `border-bottom: 2px solid ${props.theme.colors.text};`
-				: ''};
+				: ''}
 	}
 `
 

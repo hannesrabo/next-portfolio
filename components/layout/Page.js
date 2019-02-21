@@ -1,12 +1,21 @@
 import React, { Component } from 'react'
+import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { ThemeProvider } from 'styled-components'
-import Meta from '../components/Meta'
-import { theme } from './Theme'
+import Meta from './Meta'
+import { theme } from '../Theme'
 
 import { NavBar, SectionTitle } from './NavBar'
-import { navigation_sections } from '../data/nav'
+import { navigation_sections } from '../../data/nav'
+import { Header } from './Header'
+import Footer from './Footer'
+
+const Wrapper = styled.div`
+	width: 80%;
+	max-width: 850px;
+	margin: 150px auto 20px;
+`
 
 class Page extends Component {
 	constructor(props) {
@@ -16,9 +25,9 @@ class Page extends Component {
 	render() {
 		return (
 			<ThemeProvider theme={theme}>
-				<div>
+				<Wrapper>
 					<Meta />
-					<header>
+					<Header>
 						<NavBar>
 							<ul>
 								{navigation_sections.map(
@@ -37,9 +46,10 @@ class Page extends Component {
 								)}
 							</ul>
 						</NavBar>
-					</header>
+					</Header>
 					<>{this.props.children}</>
-				</div>
+					<Footer />
+				</Wrapper>
 			</ThemeProvider>
 		)
 	}
