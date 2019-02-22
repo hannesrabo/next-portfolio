@@ -65,7 +65,6 @@ jobs:
           command: |
             git add .
             git commit -m "Updated submodule id"
-            git push origin master
       - run:
           name: Creating a release
           command: npx semantic-release
