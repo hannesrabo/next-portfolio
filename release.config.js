@@ -13,6 +13,11 @@ module.exports = {
 			}
 		],
 		'@semantic-release/release-notes-generator',
-		'@semantic-release/gitlab'
+		[
+			'@semantic-release/gitlab',
+			{
+				gitlabUrl: 'https://gitlab.com'
+			}
+		]
 	]
 }
