@@ -24,15 +24,12 @@ jobs:
           command:
             - yarn build
             - yarn export
-      - run:
-          name: deploy
-          command:
-            - npx semantic-release
-            - ls
-            - cd out
-            - git add .
-            - git commit -m "update: ${CI_COMMIT_MESSAGE}"
-            - git push origin master     
+      - run: npx semantic-release
+      - run: ls
+      - run: cd out
+      - run: git add .
+      - run: git commit -m "update: ${CI_COMMIT_MESSAGE}"
+      - run: git push origin master     
       # - run:
       #     name: test
       #     command: npm test
