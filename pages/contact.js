@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Page from '../components/layout/Page'
+import { Card } from '../components/Card'
 
 const NavContainer = styled.div`
 	width: 30%;
@@ -16,9 +17,13 @@ class contact extends Component {
 	render() {
 		return (
 			<Page currentPage="/contact">
-				<div>
-					<p>Contacts you know.</p>
-				</div>
+				<Card light>
+					<h1>Contact me!</h1>
+
+					<p>Email: hannes.rabo@gmail.com</p>
+
+					<p>Phone: Upon request</p>
+				</Card>
 			</Page>
 		)
 	}
