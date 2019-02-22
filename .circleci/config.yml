@@ -19,11 +19,8 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
-      - run:
-          name: build
-          command:
-            - yarn build
-            - yarn export
+      - run: yarn build
+      - run: yarn export
       - run: npx semantic-release
       - run: ls
       - run: cd out
