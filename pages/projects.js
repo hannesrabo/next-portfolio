@@ -22,7 +22,7 @@ class projects extends Component {
 
 					<CardContainer>
 						<Card>
-							<p>This is some experience</p>
+							<p>LS Elektronik</p>
 						</Card>
 						<Card>
 							<p>This is some experience</p>

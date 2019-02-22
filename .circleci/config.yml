@@ -2,6 +2,9 @@
 version: 2
 jobs:
   build:
+    branches:
+      only:
+        - master
     working_directory: ~/portfolio
     docker:
       - image: circleci/node:10.5.0
@@ -59,7 +62,7 @@ jobs:
             git checkout master
             git merge tmp
             git branch -d tmp
-            git push origin master
+            git push -f -q origin master
       - run:
           name: Creating a release
           command: npx semantic-release
