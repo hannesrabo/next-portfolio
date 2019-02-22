@@ -1,5 +1,6 @@
 # Next build artifacts
 .next
+out
 
 # Dependencies
 node_modules

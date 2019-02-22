@@ -1,0 +1,35 @@
+image: node:10.5.0
+
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - setup
+  - build
+  - deploy
+
+setup:
+  stage: setup
+  only:
+    - master
+  script: yarn install
+
+build:
+  stage: build
+  only:
+    - master
+  script:
+    - yarn build
+    - yarn export
+
+deploy:
+  stage: deploy
+  only:
+    - master
+  script:
+    - npx semantic-release
+    - cd out
+    - git add .
+    - git commit -m "update: ${CI_COMMIT_MESSAGE}"
+    - git push origin master
