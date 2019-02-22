@@ -7,28 +7,25 @@ jobs:
       - image: circleci/node:10.5.0
     steps:
       - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: install
+          command: yarn install
       - run:
           name: Update submodule
           command: |
             git submodule init
             git submodule update
       - run:
-          name: update-npm
-          command: 'sudo npm install -g npm@5'
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: install
-          command: yarn install
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - ./node_modules
-      - run:
           name: Building and exporting
           command: |
             yarn build
             yarn export
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules            
       - run:
           name: Creating a release
           command: npx semantic-release
