@@ -28,9 +28,6 @@ jobs:
             - ./node_modules
             - ./out
       - run:
-          name: Creating a release
-          command: npx semantic-release
-      - run:
           name: Deploy to gh pages 1
           working_directory: ~/portfolio/out
           command: |
@@ -59,6 +56,9 @@ jobs:
             git remote rm origin
             git remote add origin -q https://hannesrabo:${GITHUB_TOKEN}@github.com/hannesrabo/hannesrabo.github.io.git
             git push origin master
+      - run:
+          name: Creating a release
+          command: npx semantic-release
       # - run:
       #     name: test
       #     command: npm test
