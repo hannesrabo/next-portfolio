@@ -5,35 +5,37 @@ cache:
     - node_modules/
 
 stages:
-  - setup
-  - build
+  # - setup
+  # - build
   - deploy
 
-.setup-script: &setup-script |
-  # The setup script
-  yarn install
+# .setup-script: &setup-script |
+#   # The setup script
+#   yarn install
 
-setup:
-  stage: setup
-  only:
-    - master
-  script:
-    - *setup-script
+# setup:
+#   stage: setup
+#   only:
+#     - master
+#   script:
+#     - *setup-script
 
-.build-script: &build-script |
-  yarn build
-  yarn export
+# .build-script: &build-script |
 
-build:
-  stage: build
-  only:
-    - master
-  script: 
-    - *build-script
+
+# build:
+#   stage: build
+#   only:
+#     - master
+#   script: 
+#     - *build-script
     
 .deploy-script: &deploy-script |
-  # This is a shell multi-line script to be included
+  yarn install
+  yarn build
+  yarn export
   npx semantic-release
+  ls
   cd out
   git add .
   git commit -m "update: ${CI_COMMIT_MESSAGE}"
