@@ -20,10 +20,10 @@ jobs:
           paths:
             - ./node_modules
       - run:
-        name: Building and exporting
-        command: |
-          yarn build
-          yarn export
+          name: Building and exporting
+          command: |
+            yarn build
+            yarn export
       - run:
           name: Creating a release
           command: npx semantic-release
