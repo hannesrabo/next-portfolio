@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import styled, { ThemeProvider } from 'styled-components'
+
 import Link from 'next/link'
-import { ThemeProvider } from 'styled-components'
+
 import Meta from './Meta'
 import { theme } from '../Theme'
-
 import { NavBar, SectionTitle } from './NavBar'
 import { navigation_sections } from '../../data/nav'
 import { Header } from './Header'

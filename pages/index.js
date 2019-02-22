@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+
+import Link from 'next/link'
+
 import Page from '../components/layout/Page'
 import { Card } from '../components/Card'
+import BusinessIcon from '../components/svg/BusinessIcon'
+import SchoolIcon from '../components/svg/SchoolIcon'
 
-const CardLayout = styled.div`
+const CardLayoutMain = styled.div`
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: flex-start;
@@ -28,12 +33,52 @@ const ItalicText = styled.p`
 	font-style: italic;
 `
 
+const CardLayoutQuickFacts = styled.div`
+	> div {
+		display: flex;
+		> div {
+			margin: 25px;
+
+			h3 {
+				width: 60%;
+				margin: 4px 20px;
+			}
+		}
+
+		> div:first-child {
+			padding-right: 30px;
+			border-right: 1px solid gray;
+		}
+	}
+
+	h2 {
+		font-weight: 200;
+		text-align: center;
+	}
+
+	a {
+		padding: 20px;
+		display: block;
+		text-align: center;
+		font-weight: 500;
+		text-decoration: none;
+		color: ${props => props.theme.colors.secondary};
+		font-size: 22px;
+	}
+`
+
+const CategoryHeader = styled.div`
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+`
+
 class index extends Component {
 	render() {
 		return (
 			<Page currentPage="/">
 				<Card>
-					<CardLayout>
+					<CardLayoutMain>
 						<div>
 							<h1>
 								<span>Hannes</span> Rabo
@@ -58,11 +103,68 @@ class index extends Component {
 							src="/static/img/profile_img.jpg"
 							alt="profile image"
 						/>
-					</CardLayout>
+					</CardLayoutMain>
 				</Card>
 
 				<Card light>
-					<p>Hellow</p>
+					<CardLayoutQuickFacts>
+						<h2>Quick Facts</h2>
+						<div>
+							<div>
+								<CategoryHeader>
+									<SchoolIcon />
+
+									<h3>Education</h3>
+								</CategoryHeader>
+								<p>
+									<span>
+										KTH Royal Institute of Techology
+									</span>
+								</p>
+								<p>
+									Degree program in ICT, Distributed Systems
+									and Data Science
+								</p>
+								<p>
+									Experience with distributed computing,
+									cloud, dev ops... etc.
+								</p>
+								<p>Teacher assistant in multiple courses </p>
+							</div>
+							<div>
+								<CategoryHeader>
+									<BusinessIcon />
+
+									<h3>Industry Experience</h3>
+								</CategoryHeader>
+								<p>
+									<span>
+										KTH Royal Institute of Techology
+									</span>
+								</p>
+								<p>
+									Degree program in ICT, Distributed Systems
+									and Data Science
+								</p>
+								<p>
+									Experience with distributed computing,
+									cloud, dev ops... etc.
+								</p>
+								<p>Teacher assistant in multiple courses </p>
+							</div>
+						</div>
+						<Link href="/projects">
+							<a>
+								More Info
+								<span>
+									<img
+										src="/static/img/icons/arrow_forward.svg"
+										alt="Forward Arrow"
+									/>
+								</span>
+							</a>
+						</Link>
+					</CardLayoutQuickFacts>
 				</Card>
 			</Page>
 		)

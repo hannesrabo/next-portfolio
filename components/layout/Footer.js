@@ -5,7 +5,8 @@ import styled from 'styled-components'
 const AlignedText = styled.p`
 	text-align: right;
 	color: white;
-	font-size: 22px;
+	font-size: 18px;
+	padding-right: 20px;
 `
 
 class Footer extends PureComponent {
