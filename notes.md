@@ -16,3 +16,5 @@
 
 warning package.json: No license field
 warning hrabo-portfolio: No license field
+
+// "@semantic-release/gitlab": "^3.1.2",
