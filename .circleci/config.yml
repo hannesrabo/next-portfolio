@@ -19,14 +19,24 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
-      - run: yarn build
-      - run: yarn export
-      - run: npx semantic-release
-      - run: ls
-      - run: cd out
-      - run: git add .
-      - run: git commit -m "update"
-      - run: git push origin master     
+      - run:
+        name: Building and exporting
+        command: |
+          yarn build
+          yarn export
+      - run:
+          name: Creating a release
+          command: npx semantic-release
+      - run:
+          name: Deploy to gh pages
+          working_directory: ~/portfolio/out
+          command: |
+            git config credential.helper 'cache --timeout=120'
+            git config user.email "hannes.rabo@gmail.com"
+            git config user.name "hannesrabo"
+            git add .
+            git commit -m "Update"
+            git push -q https://${GITHUB_TOKEN}@github.com/hannesrabo/hannesrabo.github.io.git master
       # - run:
       #     name: test
       #     command: npm test
@@ -41,3 +51,4 @@ jobs:
       #     prefix: coverage
       # - store_test_results:
       #     path: test-results.xml
+
