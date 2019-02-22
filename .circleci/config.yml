@@ -59,10 +59,7 @@ jobs:
             git remote rm origin
             git remote add origin https://hannesrabo:${GITHUB_TOKEN}@github.com/hannesrabo/hannesrabo.github.io.git
             git branch tmp
-            git checkout master
-            git merge tmp
-            git branch -d tmp
-            git push -f -q origin master
+            git push -f -q origin tmp:master
       - run:
           name: Creating a release
           command: npx semantic-release
