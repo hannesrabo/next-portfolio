@@ -15,11 +15,11 @@ jobs:
       - run:
           name: install
           command: yarn install
-      - run:
-          name: Update submodule
-          command: |
-            git submodule init
-            git submodule update
+      # - run:
+      #     name: Update submodule
+      #     command: |
+      #       git submodule init
+      #       git submodule update
       - run:
           name: Building and exporting
           command: |
@@ -29,45 +29,37 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
-            - ./out
+            # - ./out
       - run:
           name: Deploy to gh pages 1
           working_directory: ~/portfolio/out
           command: |
+            git init
             git config credential.helper 'cache --timeout=120'
             git config user.email "hannes.rabo@gmail.com"
             git config user.name "hannesrabo"
       - run:
-          name: Deploy to gh pages 2
-          working_directory: ~/portfolio/out
-          command: |
-            ls
-      - run:
-          name: Deploy to gh pages 3
-          working_directory: ~/portfolio/out
-          command: |
-            git add .
-      - run:
           name: Deploy to gh pages 4
           working_directory: ~/portfolio/out
           command: |
+            git add .
             git commit --allow-empty -m "Update"
       - run:
           name: Deploy to gh pages 5
           working_directory: ~/portfolio/out
           command: |
-            git remote rm origin
+            # git remote rm origin
             git remote add origin https://hannesrabo:${GITHUB_TOKEN}@github.com/hannesrabo/hannesrabo.github.io.git
             git branch tmp
             git push -f -q origin tmp:master
-      - run:
-          name: Commit new build
-          command: |
-            git config credential.helper 'cache --timeout=120'
-            git config user.email "hannes.rabo@gmail.com"
-            git config user.name "hannesrabo"
-            git add .
-            git commit -m "Updated submodule id"
+      # - run:
+      #     name: Commit new build
+      #     command: |
+      #       git config credential.helper 'cache --timeout=120'
+      #       git config user.email "hannes.rabo@gmail.com"
+      #       git config user.name "hannesrabo"
+      #       git add .
+      #       git commit -m "Updated submodule id"
       - run:
           name: Creating a release
           command: npx semantic-release
