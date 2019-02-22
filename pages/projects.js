@@ -1,16 +1,5 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
 import Page from '../components/layout/Page'
-
-const NavContainer = styled.div`
-	width: 30%;
-	right: 10%;
-	position: absolute;
-`
-
-const HeaderContainer = styled.div`
-	height: 150px;
-`
 
 class projects extends Component {
 	render() {

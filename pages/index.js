@@ -7,6 +7,8 @@ import Page from '../components/layout/Page'
 import { Card } from '../components/Card'
 import BusinessIcon from '../components/svg/BusinessIcon'
 import SchoolIcon from '../components/svg/SchoolIcon'
+import ArrowIcon from '../components/svg/ArrowIcon'
+import { theme } from './../components/Theme'
 
 const CardLayoutMain = styled.div`
 	display: flex;
@@ -55,16 +57,6 @@ const CardLayoutQuickFacts = styled.div`
 		font-weight: 200;
 		text-align: center;
 	}
-
-	a {
-		padding: 20px;
-		display: block;
-		text-align: center;
-		font-weight: 500;
-		text-decoration: none;
-		color: ${props => props.theme.colors.secondary};
-		font-size: 22px;
-	}
 `
 
 const CategoryHeader = styled.div`
@@ -73,7 +65,28 @@ const CategoryHeader = styled.div`
 	align-items: flex-end;
 `
 
+const LinkContainer = styled.a`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	text-align: center;
+	font-weight: 500;
+	text-decoration: none;
+	color: ${props => props.theme.colors.secondary};
+	font-size: 22px;
+	cursor: pointer;
+
+	p {
+		font-weight: bold;
+	}
+`
+
 class index extends Component {
+	constructor(props) {
+		super(props)
+	}
+
 	render() {
 		return (
 			<Page currentPage="/">
@@ -154,15 +167,10 @@ class index extends Component {
 							</div>
 						</div>
 						<Link href="/projects">
-							<a>
-								More Info
-								<span>
-									<img
-										src="/static/img/icons/arrow_forward.svg"
-										alt="Forward Arrow"
-									/>
-								</span>
-							</a>
+							<LinkContainer>
+								<p>More Info</p>
+								<ArrowIcon color={theme.colors.secondary} />
+							</LinkContainer>
 						</Link>
 					</CardLayoutQuickFacts>
 				</Card>
