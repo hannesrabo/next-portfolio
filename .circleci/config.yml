@@ -8,6 +8,11 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Update submodule
+          command: |
+            git submodule init
+            git submodule update
+      - run:
           name: update-npm
           command: 'sudo npm install -g npm@5'
       - restore_cache:
