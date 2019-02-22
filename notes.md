@@ -14,4 +14,5 @@
 ]
 },
 
-git subtree push --prefix out origin gh-pages
+warning package.json: No license field
+warning hrabo-portfolio: No license field

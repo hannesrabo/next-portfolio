@@ -13,15 +13,19 @@ setup:
     stage: setup
     only:
         - master
-    script: yarn install
+	script: yarn install
+	
+.build-script: &build-script |
+	yarn build
+	yarn export
 
 build:
     stage: build
     only:
         - master
-    script: yarn build
-        yarn export
-
+	script: 
+		- *build-script
+        
 .deploy-script: &deploy-script |
     # This is a shell multi-line script to be included
     npx semantic-release
@@ -34,6 +38,5 @@ deploy:
     stage: deploy
     only:
         - master
-
     script:
         - *deploy-script
