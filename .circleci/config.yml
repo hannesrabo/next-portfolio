@@ -25,7 +25,7 @@ jobs:
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
-            - ./node_modules            
+            - ./node_modules
       - run:
           name: Creating a release
           command: npx semantic-release
@@ -55,7 +55,9 @@ jobs:
           name: Deploy to gh pages 5
           working_directory: ~/portfolio/out
           command: |
-            git push -q https://${GITHUB_TOKEN}@github.com/hannesrabo/hannesrabo.github.io.git master
+            git remote rm origin
+            git remote add origin https://hannesrabo:${GITHUB_TOKEN}@/hannesrabo/hannesrabo.github.io.git
+            git push origin master
       # - run:
       #     name: test
       #     command: npm test
