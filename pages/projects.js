@@ -25,7 +25,7 @@ class projects extends Component {
 							<p>LS Elektronik</p>
 						</Card>
 						<Card>
-							<p>This is some experience</p>
+							<p>This is some experience. test</p>
 						</Card>
 					</CardContainer>
 				</ExperienceCardContainer>
