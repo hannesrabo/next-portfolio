@@ -10,16 +10,11 @@ jobs:
       - image: circleci/node:10.5.0
     steps:
       - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+      # - restore_cache:
+      #     key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: install
           command: yarn install
-      # - run:
-      #     name: Update submodule
-      #     command: |
-      #       git submodule init
-      #       git submodule update
       - run:
           name: Building and exporting
           command: |
@@ -29,39 +24,22 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
-            # - ./out
       - run:
-          name: Deploy to gh pages 1
+          name: Deploy to gh pages
           working_directory: ~/portfolio/out
           command: |
             git init
             git config credential.helper 'cache --timeout=120'
             git config user.email "hannes.rabo@gmail.com"
             git config user.name "hannesrabo"
-      - run:
-          name: Deploy to gh pages 4
-          working_directory: ~/portfolio/out
-          command: |
             git add .
             git commit --allow-empty -m "Update"
-      - run:
-          name: Deploy to gh pages 5
-          working_directory: ~/portfolio/out
-          command: |
-            # git remote rm origin
             git remote add origin https://hannesrabo:${GITHUB_TOKEN}@github.com/hannesrabo/hannesrabo.github.io.git
             git branch tmp
             git push -f -q origin tmp:master
-      # - run:
-      #     name: Commit new build
-      #     command: |
-      #       git config credential.helper 'cache --timeout=120'
-      #       git config user.email "hannes.rabo@gmail.com"
-      #       git config user.name "hannesrabo"
-      #       git add .
-      #       git commit -m "Updated submodule id"
       - run:
           name: Creating a release
+          working_directory: ~/portfolio
           command: npx semantic-release
       # - run:
       #     name: test
