@@ -10,8 +10,8 @@ jobs:
       - image: circleci/node:10.5.0
     steps:
       - checkout
-      # - restore_cache:
-      #     key: dependency-cache-{{ checksum "package.json" }}
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: install
           command: yarn install
