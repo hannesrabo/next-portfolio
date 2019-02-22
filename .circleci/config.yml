@@ -55,6 +55,10 @@ jobs:
           command: |
             git remote rm origin
             git remote add origin https://hannesrabo:${GITHUB_TOKEN}@github.com/hannesrabo/hannesrabo.github.io.git
+            git branch tmp
+            git checkout master
+            git merge tmp
+            git branch -d tmp
             git push origin master
       - run:
           name: Creating a release
