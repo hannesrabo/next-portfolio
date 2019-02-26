@@ -16,10 +16,3 @@ module.exports = {
 		'@semantic-release/github'
 	]
 }
-
-// [
-//     '@semantic-release/gitlab',
-//     {
-//         gitlabUrl: 'https://gitlab.com'
-//     }
-// ]

@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const IconContainer = styled.span`
 	position: relative;
-	width: 35px;
-	height: 35px;
+	width: ${props => props.width}px;
+	height: ${props => props.height}px;
 	svg {
 		width: 100%;
 		height: 100%;

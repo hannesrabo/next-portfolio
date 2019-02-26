@@ -1,3 +1,5 @@
+# Things that might be added to the package.json later on
+
 "husky": "^1.3.1",
 "lint-staged": "^8.1.3",
 "npm-run-all": "^4.1.5",
@@ -13,8 +15,3 @@
 "git add"
 ]
 },
-
-warning package.json: No license field
-warning hrabo-portfolio: No license field
-
-// "@semantic-release/gitlab": "^3.1.2",
