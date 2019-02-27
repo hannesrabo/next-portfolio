@@ -1,5 +1,5 @@
 export const navigation_sections = [
 	{ title: 'Home', path: '/' },
-	{ title: 'Projects', path: '/projects' },
+	{ title: 'CV', path: '/cv' },
 	{ title: 'Contact', path: '/contact' }
 ]

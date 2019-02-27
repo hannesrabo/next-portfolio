@@ -6,8 +6,8 @@ export const Card = styled.div`
 			? props.theme.colors.primary
 			: props.theme.colors.primary_light};
 	margin: 0 auto 60px;
-	box-shadow: 2px 2px 8px grey;
+	box-shadow: 2px 2px 8px #aaa;
 	padding: 8px 20px;
-	border-radius: 3px;
+	border: 1px solid lightgray;
 	box-sizing: border-box;
 `

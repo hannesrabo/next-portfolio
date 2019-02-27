@@ -11,3 +11,4 @@ Things that are coming in the future:
 -   [ ] Finalized color scheme
 -   [ ] SVG backgrounds
 -   [ ] Dynamic SVG generation
+-   [ ] Look into integrating: https://github.com/GoogleChromeLabs/lighthousebot
