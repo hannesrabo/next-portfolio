@@ -5,19 +5,18 @@ import styled from 'styled-components'
 const AlignedText = styled.p`
 	text-align: right;
 	color: white;
-	font-size: 18px;
-	padding-right: 20px;
+	font-size: 12px;
+	padding: 20px 0 0 20px;
 `
 
 class Footer extends PureComponent {
-	// constructor(props) {
-	//     super(props);
-	//     this.state = {  };
-	// }
+	constructor(props) {
+		super(props)
+	}
 	render() {
 		return (
 			<footer>
-				<Card>
+				<Card color={this.props.color}>
 					<AlignedText>
 						Copyright and Design by Hannes Rabo 2019 &copy;
 					</AlignedText>

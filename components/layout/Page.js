@@ -48,7 +48,7 @@ class Page extends Component {
 						</NavBar>
 					</Header>
 					<>{this.props.children}</>
-					<Footer />
+					<Footer {...this.props} />
 				</Wrapper>
 			</ThemeProvider>
 		)

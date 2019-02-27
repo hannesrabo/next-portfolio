@@ -5,7 +5,8 @@ import styled from 'styled-components'
 
 import { experiences } from '../data/experiences'
 import ExperienceListing from '../components/experience/ExperienceListing'
-import ExperienceBlock from '../components/experience/ExperienceBlock'
+import SingleExperiencePage from '../components/pages/SingleExperiencePage'
+import { theme } from '../components/Theme'
 
 const Container = styled.div`
 	h1 {
@@ -13,52 +14,42 @@ const Container = styled.div`
 	}
 `
 
-class Cv extends Component {
-	// static getInitialProps({ query }) {
-	// 	console.log(query)
-	// 	return { post_id: query.id }
-	// }
+class AllExperiencesPage extends Component {
+	render() {
+		return (
+			<Page currentPage="/cv">
+				<Container>
+					<Card color={theme.colors.primary_light}>
+						<h1>Experiences</h1>
+						<ExperienceListing
+							experiences={this.props.experiences}
+						/>
+					</Card>
+				</Container>
+			</Page>
+		)
+	}
+}
 
+class CVPage extends Component {
 	static async getExperience(id) {
 		return experiences[id]
 	}
 
 	static async getInitialProps({ query }) {
 		let res = undefined
-		if (query.id !== undefined) res = await Cv.getExperience(query.id)
+		if (query.id !== undefined) res = await this.getExperience(query.id)
 
 		return { post_id: query.id, experience: res }
 	}
 
 	render() {
 		if (this.props.post_id === undefined) {
-			return (
-				<Page currentPage="/cv">
-					<Container>
-						<Card light>
-							<h1>Experiences</h1>
-							<ExperienceListing experiences={experiences} />
-						</Card>
-					</Container>
-				</Page>
-			)
+			return <AllExperiencesPage experiences={experiences} />
 		} else {
-			const expBlock =
-				this.props.experience !== undefined ? (
-					<ExperienceBlock experience={this.props.experience} />
-				) : (
-					''
-				)
-
-			return (
-				<Page currentPage="/cv">
-					<Container>
-						<Card light>{expBlock}</Card>
-					</Container>
-				</Page>
-			)
+			return <SingleExperiencePage experience={this.props.experience} />
 		}
 	}
 }
 
-export default Cv
+export default CVPage

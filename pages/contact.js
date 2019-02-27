@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import Page from '../components/layout/Page'
 import { Card } from '../components/Card'
+import { theme } from '../components/Theme'
 
 const NavContainer = styled.div`
 	width: 30%;
@@ -17,7 +18,7 @@ class contact extends Component {
 	render() {
 		return (
 			<Page currentPage="/contact">
-				<Card light>
+				<Card color={theme.colors.primary_light}>
 					<h1>Contact me!</h1>
 
 					<p>Email: hannes.rabo@gmail.com</p>

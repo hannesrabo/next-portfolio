@@ -51,6 +51,7 @@ class ExperienceListing extends PureComponent {
 										<ExperienceBlock
 											key={exp.key}
 											experience={exp}
+											small
 										/>
 									)
 								})}

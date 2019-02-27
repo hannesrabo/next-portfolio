@@ -119,7 +119,7 @@ class index extends Component {
 					</CardLayoutMain>
 				</Card>
 
-				<Card light>
+				<Card color={theme.colors.primary_light}>
 					<CardLayoutQuickFacts>
 						<h2>Quick Facts</h2>
 						<div>
