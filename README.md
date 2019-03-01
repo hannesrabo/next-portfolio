@@ -12,3 +12,4 @@ Things that are coming in the future:
 -   [ ] SVG backgrounds
 -   [ ] Dynamic SVG generation
 -   [ ] Look into integrating: https://github.com/GoogleChromeLabs/lighthousebot
+-   [ ] Make the nav bar part of the page that does not reload (maybe?)

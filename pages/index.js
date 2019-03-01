@@ -73,7 +73,7 @@ const LinkContainer = styled.a`
 	text-align: center;
 	font-weight: 500;
 	text-decoration: none;
-	color: ${props => props.theme.colors.secondary};
+	color: ${props => props.theme.colors.primary_dark};
 	font-size: 22px;
 	cursor: pointer;
 
@@ -166,10 +166,10 @@ class index extends Component {
 								<p>Teacher assistant in multiple courses </p>
 							</div>
 						</div>
-						<Link href="/projects">
+						<Link href="/cv">
 							<LinkContainer>
 								<p>More Info</p>
-								<ArrowIcon color={theme.colors.secondary} />
+								<ArrowIcon color={theme.colors.primary_dark} />
 							</LinkContainer>
 						</Link>
 					</CardLayoutQuickFacts>

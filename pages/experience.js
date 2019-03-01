@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import ExperienceBlock from '../experience/ExperienceBlock'
-import Page from '../layout/Page'
-import { Card } from '../Card'
-import { theme } from '../Theme'
 import styled from 'styled-components'
+import Error from 'next/error'
+
+import Page from '../components/layout/Page'
+import { Card } from '../components/Card'
+import { theme } from '../components/Theme'
+import ExperienceBlock from '../components/experience/ExperienceBlock'
+
+import { experiences } from '../data/experiences'
 
 const CardLayout = styled.div`
 	display: flex;
@@ -32,12 +35,34 @@ const ExperienceContainer = styled.div`
 	margin: 10px;
 `
 
-class SingleExperiencePage extends Component {
+class Experience extends Component {
+	throw404() {
+		if (process.browser) {
+			return <Error statusCode={404} />
+		}
+		const e = new Error()
+		e.code = 'ENOENT'
+		throw e
+	}
+
+	static async getExperience(id) {
+		return experiences[id]
+	}
+
+	static async getInitialProps({ query, url }) {
+		let res = undefined
+		if (query.id !== undefined) res = await this.getExperience(query.id)
+
+		return { post_id: query.id, experience: res }
+	}
+
 	render() {
 		let experience = this.props.experience
 
+		if (experience === undefined) return this.throw404()
+
 		return (
-			<Page currentPage="/cv" color={theme.colors.secondary}>
+			<Page currentPage="/cv" color={theme.colors.secondary} backTo="/cv">
 				<Card color={theme.colors.secondary}>
 					<CardLayout>
 						<div>
@@ -69,6 +94,7 @@ class SingleExperiencePage extends Component {
 								<ExperienceBlock
 									experience={this.props.experience}
 									noDate
+									noLink
 								/>
 							</ExperienceContainer>
 						</Card>
@@ -79,8 +105,4 @@ class SingleExperiencePage extends Component {
 	}
 }
 
-SingleExperiencePage.propTypes = {
-	experience: PropTypes.any.isRequired
-}
-
-export default SingleExperiencePage
+export default Experience

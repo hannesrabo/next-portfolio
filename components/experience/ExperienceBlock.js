@@ -9,17 +9,17 @@ import SchoolIcon from '../svg/SchoolIcon'
 const ExperienceBlockContainer = styled.div`
 	display: flex;
 
-	margin: 0 auto 20px;
+	margin: 25px auto 25px;
 
 	> span {
 		margin-top: 1px;
 	}
 
-	h3 {
+	h3.link {
 		cursor: pointer;
 	}
 
-	h3:hover {
+	h3.link:hover {
 		text-decoration: underline;
 	}
 
@@ -42,7 +42,7 @@ const ExperienceBlockContainer = styled.div`
 	}
 
 	&:last-child {
-		margin-bottom: 0;
+		margin-bottom: 15px;
 	}
 `
 // as={`/cv/${experience.key}`}
@@ -59,9 +59,14 @@ class ExperienceBlock extends PureComponent {
 			<ExperienceBlockContainer>
 				<SchoolIcon width={24} height={24} color={'black'} />
 				<div>
-					<Link href={`/cv?id=${experience.key}`}>
+					{this.props.noLink ? (
 						<h3>{experience.title}</h3>
-					</Link>
+					) : (
+						<Link href={`/experience?id=${experience.key}`}>
+							<h3 className="link">{experience.title}</h3>
+						</Link>
+					)}
+
 					<h4>{experience.company}</h4>
 					{this.props.noDate ? (
 						''

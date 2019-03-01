@@ -11,10 +11,10 @@ const YearBlock = styled.div`
 
 	h2 {
 		display: block;
-		margin: 0 60px 0 0;
+		margin: 25px 60px 0 0;
 	}
 
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid ${props => props.theme.colors.gray_light};
 
 	&:last-child {
 		border: 0;
