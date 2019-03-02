@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Error from 'next/error'
+import Router from 'next/router'
 
 import Page from '../components/layout/Page'
 import { Card } from '../components/Card'
@@ -36,6 +37,13 @@ const ExperienceContainer = styled.div`
 `
 
 class Experience extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			post_id: props.post_id
+		}
+	}
+
 	throw404() {
 		if (process.browser) {
 			return <Error statusCode={404} />
@@ -44,20 +52,25 @@ class Experience extends Component {
 		}
 	}
 
-	static async getExperience(id) {
+	static getExperience(id) {
 		return experiences[id]
 	}
 
-	// static async getInitialProps({ query }) {
+	static async getInitialProps({ query }) {
+		return { post_id: query.id }
+	}
 
-
-	// 	return { post_id: query.id, experience: res }
-	// }
+	componentDidMount() {
+		if (Router.query.id != this.state.post_id)
+			this.setState({
+				post_id: Router.query.id
+			})
+	}
 
 	render() {
-		let experience = await this.getExperience(this.props.query.id)
+		let experience = Experience.getExperience(this.state.post_id)
 
-		if (experience === undefined) return (<p>Post not found</p>)
+		if (experience == undefined) return <p>Post not found</p>
 
 		return (
 			<Page currentPage="/cv" color={theme.colors.secondary} backTo="/cv">
@@ -90,7 +103,7 @@ class Experience extends Component {
 						>
 							<ExperienceContainer>
 								<ExperienceBlock
-									experience={this.props.experience}
+									experience={experience}
 									noDate
 									noLink
 								/>
