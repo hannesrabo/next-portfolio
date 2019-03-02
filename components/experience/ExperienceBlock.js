@@ -15,6 +15,11 @@ const ExperienceBlockContainer = styled.div`
 		margin-top: 1px;
 	}
 
+	h3 a {
+		text-decoration: none;
+		color: inherit;
+	}
+
 	h3.link {
 		cursor: pointer;
 	}
@@ -62,11 +67,11 @@ class ExperienceBlock extends PureComponent {
 					{this.props.noLink ? (
 						<h3>{experience.title}</h3>
 					) : (
-						<Link href={`/experience?id=${experience.key}`}>
-							<a>
-								<h3 className="link">{experience.title}</h3>
-							</a>
-						</Link>
+						<h3 className="link">
+							<Link href={`/experience?id=${experience.key}`}>
+								<a>{experience.title}</a>
+							</Link>
+						</h3>
 					)}
 
 					<h4>{experience.company}</h4>

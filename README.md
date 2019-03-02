@@ -1,7 +1,10 @@
-# Hannes Rabo CV page
+<p align="center">
+    # Hannes Rabo CV page
 
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-[![CircleCI](https://circleci.com/gh/hannesrabo/next-portfolio.svg?style=svg)](https://circleci.com/gh/hannesrabo/next-portfolio)
+    [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+    [![CircleCI](https://circleci.com/gh/hannesrabo/next-portfolio.svg?style=svg)](https://circleci.com/gh/hannesrabo/next-portfolio)
+
+<p>
 
 # TODO:
 

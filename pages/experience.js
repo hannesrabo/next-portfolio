@@ -48,17 +48,16 @@ class Experience extends Component {
 		return experiences[id]
 	}
 
-	static async getInitialProps({ query, url }) {
-		let res = undefined
-		if (query.id !== undefined) res = await this.getExperience(query.id)
+	// static async getInitialProps({ query }) {
 
-		return { post_id: query.id, experience: res }
-	}
+
+	// 	return { post_id: query.id, experience: res }
+	// }
 
 	render() {
-		let experience = this.props.experience
+		let experience = await this.getExperience(this.props.query.id)
 
-		if (experience === undefined) return this.throw404()
+		if (experience === undefined) return (<p>Post not found</p>)
 
 		return (
 			<Page currentPage="/cv" color={theme.colors.secondary} backTo="/cv">
