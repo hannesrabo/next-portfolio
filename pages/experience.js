@@ -40,9 +40,6 @@ class Experience extends Component {
 		if (process.browser) {
 			return <Error statusCode={404} />
 		}
-		const e = new Error()
-		e.code = 'ENOENT'
-		throw e
 	}
 
 	static async getExperience(id) {
