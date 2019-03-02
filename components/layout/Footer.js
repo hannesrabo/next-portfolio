@@ -16,7 +16,7 @@ class Footer extends PureComponent {
 	render() {
 		return (
 			<footer>
-				<Card color={this.props.color}>
+				<Card color={this.props.color} backgroundImage>
 					<AlignedText>
 						Copyright and Design by Hannes Rabo 2019 &copy;
 					</AlignedText>

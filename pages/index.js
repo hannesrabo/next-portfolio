@@ -90,7 +90,7 @@ class index extends Component {
 	render() {
 		return (
 			<Page currentPage="/">
-				<Card>
+				<Card backgroundImage>
 					<CardLayoutMain>
 						<div>
 							<h1>

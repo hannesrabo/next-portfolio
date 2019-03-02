@@ -9,25 +9,21 @@ import Footer from './Footer'
 // url('/static/abstract-tree-bottom.svg')
 const Background = styled.div`
 	margin: 0 auto;
-	background-image: url('/static/abstract-tree-top.svg'),
-		url('/static/abstract-tree-bottom.svg');
+
+	background-image: url('/static/abstract-tree-top.svg');
+	background-position: top right;
+
 	background-repeat: no-repeat;
 	background-size: 80%;
 	width: 100%;
-	background-position: top right, bottom left;
 	padding: 150px 0 20px;
 	box-shadow: 0 0 20px 17px white inset;
 
 	@media (min-width: 650px) {
-		background-size: 60%;
+		background-size: 70%;
 	}
 	@media (min-width: 1100px) {
 		width: 80%;
-		background-size: 53%;
-	}
-	@media (min-width: 1400px) {
-		width: 74%;
-		background-size: 56%;
 	}
 `
 
