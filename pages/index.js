@@ -65,17 +65,21 @@ const CategoryHeader = styled.div`
 	align-items: flex-end;
 `
 
-const LinkContainer = styled.a`
+const LinkContainer = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 20px;
-	text-align: center;
-	font-weight: 500;
-	text-decoration: none;
-	color: ${props => props.theme.colors.primary_dark};
-	font-size: 22px;
-	cursor: pointer;
+	a {
+		align-items: center;
+		display: flex;
+		padding: 20px;
+		text-align: center;
+		font-weight: 500;
+		text-decoration: none;
+		color: ${props => props.theme.colors.primary_dark};
+		font-size: 22px;
+		cursor: pointer;
+	}
 
 	p {
 		font-weight: bold;
@@ -166,12 +170,16 @@ class index extends Component {
 								<p>Teacher assistant in multiple courses </p>
 							</div>
 						</div>
-						<Link href="/cv" prefetch shallow>
-							<LinkContainer>
-								<p>More Info</p>
-								<ArrowIcon color={theme.colors.primary_dark} />
-							</LinkContainer>
-						</Link>
+						<LinkContainer>
+							<Link href="/cv">
+								<a>
+									<p>More Info</p>
+									<ArrowIcon
+										color={theme.colors.primary_dark}
+									/>
+								</a>
+							</Link>
+						</LinkContainer>
 					</CardLayoutQuickFacts>
 				</Card>
 			</Page>
