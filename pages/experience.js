@@ -39,6 +39,8 @@ class Experience extends Component {
 	throw404() {
 		if (process.browser) {
 			return <Error statusCode={404} />
+		} else {
+			return <span />
 		}
 	}
 
