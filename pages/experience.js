@@ -39,17 +39,6 @@ const ExperienceContainer = styled.div`
 class Experience extends Component {
 	constructor(props) {
 		super(props)
-		this.state = {
-			post_id: props.post_id
-		}
-	}
-
-	throw404() {
-		if (process.browser) {
-			return <Error statusCode={404} />
-		} else {
-			return <span />
-		}
 	}
 
 	static getExperience(id) {
@@ -57,65 +46,71 @@ class Experience extends Component {
 	}
 
 	static async getInitialProps({ query }) {
-		return { post_id: query.id }
+		let experience = await Experience.getExperience(query.id)
+		return { post_id: query.id, experience: experience }
 	}
 
-	componentDidMount() {
-		if (Router.query.id != this.state.post_id)
-			this.setState({
-				post_id: Router.query.id
-			})
-	}
+	// componentDidMount() {
+	// 	if (!this.experience && Router.query.id != this.state.post_id)
+	// 		this.setState({
+	// 			post_id: Router.query.id
+	// 		})
+	// }
 
 	render() {
-		let experience = Experience.getExperience(this.state.post_id)
+		// if (process.browser && !this.experience) {
+		// 	this.experience = Experience.getExperience(Router.query.id)
+		// }
 
-		if (process.browser) {
-			console.log('Router: ', Router.query.id)
-			console.log('post_id: ', this.state.post_id)
-			console.log('experience: ', experience)
-		}
+		// if (this.state.post_id != undefined) {
+		// 	this.experience = Experience.getExperience(this.props.post_id)
+		// }
 
-		if (experience == undefined) return <p>Post not found</p>
+		let experience = this.props.experience
 
 		return (
 			<Page currentPage="/cv" color={theme.colors.secondary} backTo="/cv">
 				<Card color={theme.colors.secondary}>
-					<CardLayout>
-						<div>
-							<h1>
-								{experience.start_year}
-								{experience.start_year == experience.end_year
-									? ''
-									: ` - ${experience.end_year}`}
-							</h1>
-							<p>
-								{experience.start_month}
-								{experience.end_year !== 'Present'
-									? ` - ${experience.end_month}`
-									: ''}
-							</p>
-							<hr />
-							<ul>
-								{experience.keywords.map((word, key) => (
-									<li key={key}>{word}</li>
-								))}
-							</ul>
-						</div>
-						<Card
-							color={theme.colors.secondary_light}
-							noShadow
-							noSpacer
-						>
-							<ExperienceContainer>
-								<ExperienceBlock
-									experience={experience}
-									noDate
-									noLink
-								/>
-							</ExperienceContainer>
-						</Card>
-					</CardLayout>
+					{experience == undefined ? (
+						<p>Looking for the post...</p>
+					) : (
+						<CardLayout>
+							<div>
+								<h1>
+									{experience.start_year}
+									{experience.start_year ==
+									experience.end_year
+										? ''
+										: ` - ${experience.end_year}`}
+								</h1>
+								<p>
+									{experience.start_month}
+									{experience.end_year !== 'Present'
+										? ` - ${experience.end_month}`
+										: ''}
+								</p>
+								<hr />
+								<ul>
+									{experience.keywords.map((word, key) => (
+										<li key={key}>{word}</li>
+									))}
+								</ul>
+							</div>
+							<Card
+								color={theme.colors.secondary_light}
+								noShadow
+								noSpacer
+							>
+								<ExperienceContainer>
+									<ExperienceBlock
+										experience={experience}
+										noDate
+										noLink
+									/>
+								</ExperienceContainer>
+							</Card>
+						</CardLayout>
+					)}
 				</Card>
 			</Page>
 		)

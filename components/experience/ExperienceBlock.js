@@ -68,7 +68,7 @@ class ExperienceBlock extends PureComponent {
 						<h3>{experience.title}</h3>
 					) : (
 						<h3 className="link">
-							<Link href={`/experience?id=${experience.key}`}>
+							<Link href={`/cv/${experience.key}`}>
 								<a>{experience.title}</a>
 							</Link>
 						</h3>

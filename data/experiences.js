@@ -108,4 +108,6 @@ function getExperiences() {
 	return experience_list
 }
 
-export const experiences = getExperiences()
+module.exports = {
+	experiences: getExperiences()
+}

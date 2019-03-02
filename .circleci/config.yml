@@ -20,6 +20,7 @@ jobs:
           command: |
             yarn build
             yarn export
+            touch ./out/.nojekyll
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
