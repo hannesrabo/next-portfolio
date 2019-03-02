@@ -69,6 +69,9 @@ class Experience extends Component {
 
 	render() {
 		let experience = Experience.getExperience(this.state.post_id)
+		console.log('Router: ', Router.query.id)
+		console.log('post_id: ', this.state.post_id)
+		console.log('experience: ', experience)
 
 		if (experience == undefined) return <p>Post not found</p>
 
