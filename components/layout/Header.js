@@ -42,9 +42,14 @@ class Header extends Component {
 		// Using this event to make sure we react even if they don't press the
 		// nav bar.
 		const handleRouteChange = url => {
+			let rUrl = url
+			if (rUrl.length > 1 && rUrl[rUrl.length - 1] == '/')
+				rUrl = url.substr(0, rUrl.length - 1)
+
 			navigation_sections.map((section, index) => {
-				if (section.path == url)
+				if (section.path == rUrl) {
 					this.setState({ selectedSection: index })
+				}
 			})
 		}
 
@@ -73,7 +78,7 @@ class Header extends Component {
 								activeIndex={this.state.selectedSection}
 								numberOfTabs={navigation_sections.length}
 								key={i}
-								active={this.props.currentPage === path}
+								active={this.state.selectedSection === i}
 							>
 								<Link href={path} prefetch shallow>
 									<a>{title}</a>

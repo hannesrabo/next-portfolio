@@ -4,7 +4,8 @@
 		"start": "next",
 		"build": "next build ",
 		"export": "next export",
-		"commit": "npx git-cz"
+		"commit": "npx git-cz",
+		"stest": "next build && next export && http-server ./out"
 	},
 	"dependencies": {
 		"next": "^8.0.1",
