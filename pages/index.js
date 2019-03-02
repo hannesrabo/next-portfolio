@@ -166,7 +166,7 @@ class index extends Component {
 								<p>Teacher assistant in multiple courses </p>
 							</div>
 						</div>
-						<Link href="/cv">
+						<Link href="/cv" prefetch shallow>
 							<LinkContainer>
 								<p>More Info</p>
 								<ArrowIcon color={theme.colors.primary_dark} />
