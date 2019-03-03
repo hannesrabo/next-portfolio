@@ -1,5 +1,4 @@
-import Document, { Main, NextScript } from 'next/document'
-import Head from 'next/head'
+import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 import PageHead from '../components/layout/PageHead'
 import site_config from '../site-config'

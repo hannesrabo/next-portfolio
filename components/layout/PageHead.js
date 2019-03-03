@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Head from 'next/head'
+import { Head } from 'next/document'
 import PropTypes from 'prop-types'
 import schemaGenerator from '../../helpers/schemaGenerator'
 
