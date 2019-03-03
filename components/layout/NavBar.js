@@ -42,10 +42,6 @@ export const NavBar = styled.nav`
 // 			props.active
 // 				? `${theme.colors.text_bold}`
 // 				: `${theme.colors.text}`};
-// 		${props =>
-// 			props.active
-// 				? `border-bottom: 2px solid ${theme.colors.text};`
-// 				: ''}
 // 	}
 // 	&:last-child::before {
 // 		position: absolute;
@@ -57,8 +53,8 @@ export const NavBar = styled.nav`
 // 		content: '';
 // 		transition: transform 0.2s;
 
-// 		transform: translateX(
-// 			-${props => props.numberOfTabs - props.activeIndex - 1}00%
+// 		transform: translate3D(
+// 			-${props => props.numberOfTabs - props.activeIndex - 1}00%, 0, 0
 // 		);
 // 	}
 // `

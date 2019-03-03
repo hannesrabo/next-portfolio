@@ -42,7 +42,7 @@ const Background = styled.div`
 		background-size: 70%;
 	}
 
-	@media (min-width: 800) {
+	@media (min-width: 850px) {
 		padding: 150px 0 20px;
 	}
 
