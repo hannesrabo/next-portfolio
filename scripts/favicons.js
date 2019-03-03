@@ -20,7 +20,7 @@ if (!fs.existsSync(dir)) {
 
 const source = 'static/favicon.png'
 const configuration = {
-	path: '/favicons/',
+	path: '/static/favicons/',
 	appName: siteTitleShort,
 	appDescription: siteDescription,
 	developerName: siteTitleShort,
