@@ -30,6 +30,7 @@ class PageHead extends Component {
 
 		return (
 			<Head>
+				<title>{siteTitle}</title>
 				<meta content="IE=edge" httpEquiv="X-UA-Compatible" />
 				<meta
 					content="width=device-width,initial-scale=1.0,user-scalable=yes"
