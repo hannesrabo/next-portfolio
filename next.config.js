@@ -6,17 +6,13 @@
 
 const { experiences } = require('./data/experiences')
 const { navigation_sections } = require('./data/nav')
+const withOffline = require('next-offline')
 
-module.exports = {
+const nextConfig = {
 	exportPathMap: function() {
-		const paths = {
-			// '/': { page: '/' },
-			// '/cv': { page: '/cv' },
-			// '/contact': {
-			// 	page: '/contact'
-			// }
-		}
+		const paths = {}
 		let cvPath = 0
+
 		navigation_sections.forEach(nav => {
 			paths[`${nav.path}`] = {
 				page: `${nav.path}`,
@@ -32,8 +28,28 @@ module.exports = {
 			}
 		})
 
-		console.log(paths)
-
 		return paths
+	},
+	workboxOpts: {
+		swDest: 'service-worker.js',
+		runtimeCaching: [
+			{
+				urlPattern: /^https?.*/,
+				handler: 'networkFirst',
+				options: {
+					cacheName: 'https-calls',
+					networkTimeoutSeconds: 15,
+					expiration: {
+						maxEntries: 150,
+						maxAgeSeconds: 30 * 24 * 60 * 60 // 1 month
+					},
+					cacheableResponse: {
+						statuses: [0, 200]
+					}
+				}
+			}
+		]
 	}
 }
+
+module.exports = withOffline(nextConfig)
