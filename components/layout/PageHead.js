@@ -31,7 +31,6 @@ class PageHead extends Component {
 
 		return (
 			<Head>
-				<html lang="en" />
 				<meta charSet="utf-8" />
 				<meta content="IE=edge" httpEquiv="X-UA-Compatible" />
 				<meta

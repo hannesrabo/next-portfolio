@@ -15,7 +15,7 @@ class MyDocument extends Document {
 
 	render() {
 		return (
-			<html>
+			<html lang="en">
 				<Head>{this.props.styleTags}</Head>
 				<PageHead {...site_config} query={this.props.asPath} />
 				<body>
