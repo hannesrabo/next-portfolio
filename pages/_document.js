@@ -17,12 +17,8 @@ class MyDocument extends Document {
 	render() {
 		return (
 			<html>
-				<PageHead {...site_config} query={this.props.asPath}>
-					{this.props.styleTags}
-				</PageHead>
-				{/* <Head>
-					{this.props.styleTags} <title>This is the title</title>
-				</Head> */}
+				<Head>{this.props.styleTags}</Head>
+				<PageHead {...site_config} query={this.props.asPath} />
 				<body>
 					<Main />
 					<NextScript />

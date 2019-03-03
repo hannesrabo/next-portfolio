@@ -66,19 +66,19 @@ class PageHead extends Component {
 				<link rel="canonical" href={canonical} />
 
 				<meta
-					content={imageUrl || `${siteUrl}/social.png`}
+					content={imageUrl || `${siteUrl}/static/social.png`}
 					property="og:image"
 				/>
 				<meta content="1024" property="og:image:width" />
 				<meta content="512" property="og:image:height" />
 				<meta
-					content={imageUrl || `${siteUrl}/social.png`}
+					content={imageUrl || `${siteUrl}/static/social.png`}
 					name="twitter:image"
 				/>
 				<meta content="1024" name="twitter:image:width" />
 				<meta content="512" name="twitter:image:height" />
 				<meta
-					content={imageUrl || `${siteUrl}/social.png`}
+					content={imageUrl || `${siteUrl}/static/social.png`}
 					property="og:image"
 				/>
 				<meta content="1024" property="og:image:width" />
@@ -159,6 +159,7 @@ class PageHead extends Component {
 					sizes="180x180"
 					type="image/png"
 				/>
+				<link rel="shortcut icon" href="/static/favicon.png" />
 
 				<link
 					href="/static/favicon/favicon-32x32.png"
