@@ -21,6 +21,7 @@ jobs:
             yarn build
             yarn export
             touch ./out/.nojekyll
+            cp ./static/googlef3ce3353ce89ff8c.html ./out/
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
