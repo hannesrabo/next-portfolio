@@ -13,6 +13,7 @@ class PageHead extends Component {
 	render() {
 		let {
 			siteTitle,
+			siteTitleShort,
 			siteDescription,
 			siteUrl,
 			query,
@@ -27,11 +28,8 @@ class PageHead extends Component {
 			canonical = siteUrl + (path || '')
 		} = this.props
 
-		console.log(this.props)
-
 		return (
 			<Head>
-				<meta charSet="utf-8" />
 				<meta content="IE=edge" httpEquiv="X-UA-Compatible" />
 				<meta
 					content="width=device-width,initial-scale=1.0,user-scalable=yes"
@@ -41,8 +39,9 @@ class PageHead extends Component {
 				<meta content={siteTitle} name="apple-mobile-web-app-title" />
 				<meta content={pageTitleFull} property="og:title" />
 				<meta content={pageTitleFull} name="twitter:title" />
-				<title>{pageTitleFull}</title>
 
+				<meta content={siteTitle} name="name" />
+				<meta content={siteTitleShort} name="short_name" />
 				<meta content={siteDescription} name="description" />
 				<meta content={siteDescription} property="og:description" />
 				<meta content={siteDescription} name="twitter:description" />
@@ -85,75 +84,75 @@ class PageHead extends Component {
 
 				<meta content={themeColor} name="msapplication-TileColor" />
 				<meta
-					content="/static/favicon/mstile-70x70.png"
+					content="/static/favicons/mstile-70x70.png"
 					name="msapplication-square70x70"
 				/>
 				<meta
-					content="/static/favicon/mstile-144x144.png"
+					content="/static/favicons/mstile-144x144.png"
 					name="msapplication-square144x144"
 				/>
 				<meta
-					content="/static/favicon/mstile-150x150.png"
+					content="/static/favicons/mstile-150x150.png"
 					name="msapplication-square150x150"
 				/>
 				<meta
-					content="/static/favicon/mstile-310x150.png"
+					content="/static/favicons/mstile-310x150.png"
 					name="msapplication-wide310x150"
 				/>
 				<meta
-					content="/static/favicon/mstile-310x310.png"
+					content="/static/favicons/mstile-310x310.png"
 					name="msapplication-square310x310"
 				/>
 
 				<link href="/static/manifest.json" rel="manifest" />
 
 				<link
-					href="/static/favicon/apple-touch-icon-57x57.png"
+					href="/static/favicons/apple-touch-icon-57x57.png"
 					rel="apple-touch-icon"
 					sizes="57x57"
 				/>
 				<link
-					href="/static/favicon/apple-touch-icon-60x60.png"
+					href="/static/favicons/apple-touch-icon-60x60.png"
 					rel="apple-touch-icon"
 					sizes="60x60"
 				/>
 				<link
-					href="/static/favicon/apple-touch-icon-72x72.png"
+					href="/static/favicons/apple-touch-icon-72x72.png"
 					rel="apple-touch-icon"
 					sizes="72x72"
 				/>
 				<link
-					href="/static/favicon/apple-touch-icon-76x76.png"
+					href="/static/favicons/apple-touch-icon-76x76.png"
 					rel="apple-touch-icon"
 					sizes="76x76"
 				/>
 				<link
-					href="/static/favicon/apple-touch-icon-114x114.png"
+					href="/static/favicons/apple-touch-icon-114x114.png"
 					rel="apple-touch-icon"
 					sizes="114x114"
 				/>
 				<link
-					href="/static/favicon/apple-touch-icon-120x120.png"
+					href="/static/favicons/apple-touch-icon-120x120.png"
 					rel="apple-touch-icon"
 					sizes="120x120"
 				/>
 				<link
-					href="/static/favicon/apple-touch-icon-144x144.png"
+					href="/static/favicons/apple-touch-icon-144x144.png"
 					rel="apple-touch-icon"
 					sizes="144x144"
 				/>
 				<link
-					href="/static/favicon/apple-touch-icon-152x152.png"
+					href="/static/favicons/apple-touch-icon-152x152.png"
 					rel="apple-touch-icon"
 					sizes="152x152"
 				/>
 				<link
-					href="/static/favicon/apple-touch-icon-167x167.png"
+					href="/static/favicons/apple-touch-icon-167x167.png"
 					rel="apple-touch-icon"
 					sizes="167x167"
 				/>
 				<link
-					href="/static/favicon/apple-touch-icon-180x180.png"
+					href="/static/favicons/apple-touch-icon-180x180.png"
 					rel="icon"
 					sizes="180x180"
 					type="image/png"
@@ -161,13 +160,13 @@ class PageHead extends Component {
 				<link rel="shortcut icon" href="/static/favicon.png" />
 
 				<link
-					href="/static/favicon/favicon-32x32.png"
+					href="/static/favicons/favicon-32x32.png"
 					rel="icon"
 					sizes="32x32"
 					type="image/png"
 				/>
 				<link
-					href="/static/favicon/favicon-16x16.png"
+					href="/static/favicons/favicon-16x16.png"
 					rel="icon"
 					sizes="16x16"
 					type="image/png"

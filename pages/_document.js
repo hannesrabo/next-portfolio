@@ -1,7 +1,7 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 import PageHead from '../components/layout/PageHead'
-import site_config from '../site-config'
+import { site_config } from '../site-config'
 
 class MyDocument extends Document {
 	static getInitialProps({ renderPage, asPath }) {

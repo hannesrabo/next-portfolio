@@ -2,11 +2,16 @@ const favicons = require('favicons')
 const path = require('path')
 const fs = require('fs')
 
+const { site_config } = require('../site-config')
 const {
 	siteTitleShort,
 	themeColor,
-	backgroundColor
-} = require('../site-config')
+	backgroundColor,
+	siteDescription
+	// imageUrl,
+	// siteTitle,
+	// siteUrl
+} = site_config
 
 const dir = path.resolve(__dirname, '../static/favicons/')
 if (!fs.existsSync(dir)) {
@@ -17,8 +22,8 @@ const source = 'static/favicon.png'
 const configuration = {
 	path: '/favicons/',
 	appName: siteTitleShort,
-	appDescription: null,
-	developerName: null,
+	appDescription: siteDescription,
+	developerName: siteTitleShort,
 	developerURL: null,
 	dir: 'auto',
 	lang: 'en-US',
