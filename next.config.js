@@ -15,6 +15,7 @@ const nextConfig = {
 
 		navigation_sections.forEach(nav => {
 			paths[`${nav.path}`] = {
+				title: `${nav.title}`,
 				page: `${nav.path}`,
 				query: { navId: nav.navId }
 			}

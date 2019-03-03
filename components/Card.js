@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Card = styled.div`
 	${props =>
 		props.backgroundImage
-			? ` background-image: url(/static/abstract-tree-top-w.svg);
+			? ` background-image: url(/static/background/abstract-tree-top-w.svg);
 				background-color: #6f8b70;
 				background-repeat: no-repeat;
 				background-position: right;

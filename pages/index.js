@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 import Link from 'next/link'
+import Head from 'next/head'
 
 import Page from '../components/layout/Page'
 import { Card } from '../components/Card'

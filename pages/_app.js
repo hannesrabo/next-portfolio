@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
 const Background = styled.div`
 	margin: 0 auto;
 
-	background-image: url('/static/abstract-tree-top.svg');
+	background-image: url('/static/background/abstract-tree-top.svg');
 	background-position: top right;
 
 	background-repeat: no-repeat;

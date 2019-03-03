@@ -2,11 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled, { ThemeProvider } from 'styled-components'
 
-import Meta from './Meta'
 import { theme } from '../Theme'
-import Header from './Header'
 import Footer from './Footer'
-// url('/static/abstract-tree-bottom.svg')
 
 const Wrapper = styled.div`
 	width: 95%;
@@ -27,7 +24,6 @@ class Page extends Component {
 		return (
 			<ThemeProvider theme={theme}>
 				<Wrapper>
-					<Meta />
 					<>{this.props.children}</>
 					<Footer {...this.props} />
 				</Wrapper>

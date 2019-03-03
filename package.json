@@ -1,8 +1,10 @@
 {
 	"name": "hrabo-portfolio",
+	"license": "MIT",
 	"scripts": {
 		"start": "next",
-		"build": "next build ",
+		"build-icons": "node scripts/favicons",
+		"build": "yarn build-icons && next build ",
 		"export": "next export",
 		"commit": "npx git-cz",
 		"stest": "next build && next export && http-server ./out"
@@ -18,6 +20,7 @@
 	"devDependencies": {
 		"@semantic-release/github": "^5.2.10",
 		"cz-conventional-changelog": "^2.1.0",
+		"favicons": "^5.3.0",
 		"prettier": "^1.16.4",
 		"semantic-release": "^15.13.3",
 		"semantic-release-gitlab": "^7.1.3"
