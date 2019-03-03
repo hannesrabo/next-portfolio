@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
 	}
 	.page-transition-exit-active {
 		opacity: 0;
-		transition: opacity 100ms ease-in;
+		transition: opacity 200ms ease-in;
 	}
 `
 
@@ -65,7 +65,7 @@ export default class MyApp extends App {
 				<GlobalStyle />
 				<Background>
 					<Header query={router.query} />
-					<PageTransition timeout={120} classNames="page-transition">
+					<PageTransition timeout={220} classNames="page-transition">
 						<Component {...pageProps} />
 					</PageTransition>
 				</Background>

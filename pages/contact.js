@@ -3,27 +3,26 @@ import styled from 'styled-components'
 import Page from '../components/layout/Page'
 import { Card } from '../components/Card'
 import { theme } from '../components/Theme'
+const Container = styled.div`
+	text-align: center;
 
-const NavContainer = styled.div`
-	width: 30%;
-	right: 10%;
-	position: absolute;
+	h1,
+	p {
+		margin: 45px;
+	}
 `
-
-const HeaderContainer = styled.div`
-	height: 150px;
-`
-
 class contact extends Component {
 	render() {
 		return (
 			<Page currentPage="/contact">
 				<Card color={theme.colors.primary_light}>
-					<h1>Contact me!</h1>
+					<Container>
+						<h1>Contact me!</h1>
 
-					<p>Email: hannes.rabo@gmail.com</p>
+						<p>Email: hannes.rabo@gmail.com</p>
 
-					<p>Phone: Upon request</p>
+						<p>Phone: Upon request</p>
+					</Container>
 				</Card>
 			</Page>
 		)

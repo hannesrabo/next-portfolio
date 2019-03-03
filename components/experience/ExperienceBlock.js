@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 import { theme } from '../Theme'
 import SchoolIcon from '../svg/SchoolIcon'
+import BusinessIcon from '../svg/BusinessIcon'
 
 const ExperienceBlockContainer = styled.div`
 	display: flex;
@@ -62,7 +63,12 @@ class ExperienceBlock extends PureComponent {
 
 		return (
 			<ExperienceBlockContainer>
-				<SchoolIcon width={24} height={24} color={'black'} />
+				{experience.type == 'academic' ? (
+					<SchoolIcon width={24} height={24} color={'black'} />
+				) : (
+					<BusinessIcon width={24} height={24} color={'black'} />
+				)}
+
 				<div>
 					{this.props.noLink ? (
 						<h3>{experience.title}</h3>

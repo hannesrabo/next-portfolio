@@ -40,7 +40,7 @@ const CardLayoutQuickFacts = styled.div`
 		display: flex;
 		> div {
 			margin: 25px;
-
+			flex: 1 0 0;
 			h3 {
 				width: 60%;
 				margin: 4px 20px;
@@ -54,8 +54,12 @@ const CardLayoutQuickFacts = styled.div`
 	}
 
 	h2 {
-		font-weight: 200;
+		margin-top: 45px;
 		text-align: center;
+	}
+
+	p {
+		/* margin-left: 20px; */
 	}
 `
 
@@ -104,15 +108,15 @@ class index extends Component {
 								Hi! I am glad you found your way here.
 							</ItalicText>
 							<p>
-								Apart from that I am also active as a leader and
-								organizer of weekly activities and events
-								multiple times every year
-							</p>
-							<p>
 								I am a curious and fast learning computer
 								science student with experience as both research
 								assistant, teaching assistant as well as
 								software developer.
+							</p>
+							<p>
+								Apart from that I am also active as a Scout
+								leader and organizer of weekly activities and
+								events multiple times every year
 							</p>
 						</div>
 						<img
@@ -129,45 +133,43 @@ class index extends Component {
 						<div>
 							<div>
 								<CategoryHeader>
-									<SchoolIcon />
+									<SchoolIcon width={30} height={30} />
 
-									<h3>Education</h3>
+									<h3>Academic Experience</h3>
 								</CategoryHeader>
-								<p>
-									<span>
-										KTH Royal Institute of Techology
-									</span>
-								</p>
+								<ItalicText>
+									KTH Royal Institute of Techology
+								</ItalicText>
 								<p>
 									Degree program in ICT, Distributed Systems
-									and Data Science
+									and Data Science. Experience with
+									distributed and cloud computing, and
+									software engineering
 								</p>
 								<p>
-									Experience with distributed computing,
-									cloud, dev ops... etc.
+									Have been a teachers assistant in two
+									courses: "Digital Design" and "Operating
+									Systems"
 								</p>
-								<p>Teacher assistant in multiple courses </p>
 							</div>
 							<div>
 								<CategoryHeader>
-									<BusinessIcon />
+									<BusinessIcon width={30} height={30} />
 
 									<h3>Industry Experience</h3>
 								</CategoryHeader>
+								<ItalicText>
+									Software Developer / Engineer
+								</ItalicText>
 								<p>
-									<span>
-										KTH Royal Institute of Techology
-									</span>
+									Two years experience as professional
+									software developer beside by studies.
 								</p>
+								<ItalicText>Research Assistant</ItalicText>
 								<p>
-									Degree program in ICT, Distributed Systems
-									and Data Science
+									Working with statistical simulations for
+									phylogenetics.
 								</p>
-								<p>
-									Experience with distributed computing,
-									cloud, dev ops... etc.
-								</p>
-								<p>Teacher assistant in multiple courses </p>
 							</div>
 						</div>
 						<LinkContainer>
