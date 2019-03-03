@@ -5,6 +5,8 @@ import styled from 'styled-components'
 import { PageTransition } from 'next-page-transitions'
 
 const GlobalStyle = createGlobalStyle`
+	html{overflow-x: hidden;}
+
 	body {
 		margin: 0;
 		color: #222;
