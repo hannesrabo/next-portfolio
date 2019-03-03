@@ -35,12 +35,17 @@ const Background = styled.div`
 	background-repeat: no-repeat;
 	background-size: 80%;
 	width: 100%;
-	padding: 150px 0 20px;
 	box-shadow: 0 0 20px 17px white inset;
+	padding: 50px 0 20px;
 
 	@media (min-width: 650px) {
 		background-size: 70%;
 	}
+
+	@media (min-width: 800) {
+		padding: 150px 0 20px;
+	}
+
 	@media (min-width: 1100px) {
 		width: 80%;
 	}

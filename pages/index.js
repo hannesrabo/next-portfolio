@@ -12,9 +12,17 @@ import { theme } from './../components/Theme'
 
 const CardLayoutMain = styled.div`
 	display: flex;
-	flex-flow: row nowrap;
+	flex-flow: row wrap-reverse;
 	align-items: flex-start;
 	color: white;
+	justify-content: center;
+	text-align: center;
+
+	@media (min-width: 850px) {
+		flex-flow: row nowrap;
+		justify-content: inherit;
+		text-align: left;
+	}
 
 	h1 {
 		padding-bottom: 16px;
@@ -26,8 +34,14 @@ const CardLayoutMain = styled.div`
 	}
 
 	img {
-		margin: 40px;
+		margin: 50px 0 0;
 		border: 2px solid white;
+		width: 62%;
+
+		@media (min-width: 850px) {
+			margin: 40px;
+			width: 32%;
+		}
 	}
 `
 
@@ -38,6 +52,11 @@ const ItalicText = styled.p`
 const CardLayoutQuickFacts = styled.div`
 	> div {
 		display: flex;
+		flex-wrap: wrap;
+		@media (min-width: 850px) {
+			flex-wrap: nowrap;
+		}
+
 		> div {
 			margin: 25px;
 			flex: 1 0 0;
@@ -49,7 +68,13 @@ const CardLayoutQuickFacts = styled.div`
 
 		> div:first-child {
 			padding-right: 30px;
-			border-right: 1px solid gray;
+			padding-bottom: 30px;
+
+			border-bottom: 1px solid gray;
+			@media (min-width: 850px) {
+				border-bottom: 0;
+				border-right: 1px solid gray;
+			}
 		}
 	}
 
@@ -120,7 +145,6 @@ class index extends Component {
 							</p>
 						</div>
 						<img
-							width="32%"
 							src="/static/img/profile_img.jpg"
 							alt="profile image"
 						/>

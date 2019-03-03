@@ -3,8 +3,12 @@ import styled from 'styled-components'
 import { theme } from '../Theme'
 
 export const NavBar = styled.nav`
-	width: 40%;
+	width: 100%;
 	margin-left: auto;
+
+	@media (min-width: 850px) {
+		width: 40%;
+	}
 
 	ul {
 		display: flex;

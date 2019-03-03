@@ -9,9 +9,13 @@ import Footer from './Footer'
 // url('/static/abstract-tree-bottom.svg')
 
 const Wrapper = styled.div`
-	width: 80%;
+	width: 95%;
 	max-width: 850px;
 	margin: 0 auto;
+
+	@media (min-width: 850px) {
+		width: 80%;
+	}
 `
 
 class Page extends Component {

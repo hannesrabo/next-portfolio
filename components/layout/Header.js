@@ -11,9 +11,12 @@ const HeaderContainer = styled.header`
 	width: 80%;
 	max-width: 850px;
 	margin: 0 auto;
-	/* width: 100%; */
 	display: flex;
 	justify-content: space-between;
+
+	/* @media (min-width: 850px) {
+		width: 80%;
+	} */
 `
 
 const BackArrow = styled.div`
