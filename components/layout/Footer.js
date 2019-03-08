@@ -2,6 +2,14 @@ import { PureComponent } from 'react'
 import { Card } from '../Card'
 import styled from 'styled-components'
 
+const FooterContainer = styled.footer`
+	margin-bottom: 0;
+
+	@media (min-width: 850px) {
+		margin-bottom: 60px;
+	}
+`
+
 const AlignedText = styled.p`
 	text-align: right;
 	color: white;
@@ -15,13 +23,13 @@ class Footer extends PureComponent {
 	}
 	render() {
 		return (
-			<footer>
-				<Card color={this.props.color} backgroundImage>
+			<FooterContainer>
+				<Card color={this.props.color} backgroundImage noSpacer>
 					<AlignedText>
 						Copyright and Design by Hannes Rabo 2019 &copy;
 					</AlignedText>
 				</Card>
-			</footer>
+			</FooterContainer>
 		)
 	}
 }

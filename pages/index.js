@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 import Link from 'next/link'
-import Head from 'next/head'
 
 import Page from '../components/layout/Page'
 import { Card } from '../components/Card'
@@ -18,6 +17,7 @@ const CardLayoutMain = styled.div`
 	color: white;
 	justify-content: center;
 	text-align: center;
+	margin: 25px 0;
 
 	@media (min-width: 850px) {
 		flex-flow: row nowrap;
@@ -27,17 +27,23 @@ const CardLayoutMain = styled.div`
 
 	h1 {
 		padding-bottom: 16px;
+		margin-bottom: 45px;
 		border-bottom: 2px solid white;
 	}
 
 	div {
-		padding: 10px;
+		padding: 20px;
+		margin: 10px 0;
+		@media (min-width: 850px) {
+			padding: 10px;
+			margin: 0;
+		}
 	}
 
 	img {
 		margin: 50px 0 0;
 		border: 2px solid white;
-		width: 62%;
+		width: 65%;
 
 		@media (min-width: 850px) {
 			margin: 40px;
@@ -59,7 +65,7 @@ const CardLayoutQuickFacts = styled.div`
 		}
 
 		> div {
-			margin: 25px;
+			margin: 20px;
 			flex: 1 0 0;
 			h3 {
 				width: 60%;
@@ -68,11 +74,12 @@ const CardLayoutQuickFacts = styled.div`
 		}
 
 		> div:first-child {
-			padding-right: 30px;
+			padding-right: 0;
 			padding-bottom: 30px;
 
 			border-bottom: 1px solid gray;
 			@media (min-width: 850px) {
+				padding-right: 40px;
 				border-bottom: 0;
 				border-right: 1px solid gray;
 			}

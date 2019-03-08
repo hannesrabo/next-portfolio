@@ -69,8 +69,8 @@ const experience_list = [
 		description: '',
 		keywords: [],
 		important_points: [
-			'Bachelor’s degree in ICT and pursuing Master’s degree in Distributed',
-			'Systems. Average Grade: 4.78 / 5'
+			'Bachelor’s degree in ICT and pursuing Master’s degree in Distributed Systems.',
+			'Average Grade: 4.78 / 5'
 		]
 	},
 	{

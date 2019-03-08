@@ -8,10 +8,20 @@ const YearBlock = styled.div`
 	color: ${props => props.theme.colors.primary_dark};
 	margin: 20px;
 	padding: 20px 0;
+	flex-wrap: wrap;
 
 	h2 {
-		display: block;
-		margin: 25px 60px 0 0;
+		display: inline;
+		margin: 25px 0 0 0;
+		text-align: center;
+		width: 100%;
+
+		@media (min-width: 850px) {
+			width: initial;
+			display: block;
+			text-align: right;
+			margin: 25px 60px 0 0;
+		}
 	}
 
 	border-bottom: 1px solid ${props => props.theme.colors.gray_light};
@@ -19,6 +29,10 @@ const YearBlock = styled.div`
 	&:last-child {
 		border: 0;
 		margin-bottom: 0;
+	}
+
+	@media (min-width: 850px) {
+		flex-wrap: nowrap;
 	}
 `
 

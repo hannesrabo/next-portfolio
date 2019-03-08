@@ -17,9 +17,9 @@ const Container = styled.div`
 class CVPage extends Component {
 	render() {
 		return (
-			<Page currentPage="/cv" color={theme.colors.secondary}>
+			<Page currentPage="/cv">
 				<Container>
-					<Card color={theme.colors.secondary_tint}>
+					<Card color={theme.colors.primary_light}>
 						<h1>Experiences</h1>
 						<ExperienceListing experiences={experiences} />
 					</Card>

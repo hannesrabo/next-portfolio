@@ -36,20 +36,18 @@ export const SectionTitle = styled.li`
 		font-size: 20px;
 		display: block;
 		text-decoration: none;
-		/* transition: transform 0.6s; */
 		/* ${props => props.active && 'transform: translateY(1px);'} */
 		color: ${props =>
-			props.active
-				? `${theme.colors.text_bold}`
-				: `${theme.colors.text}`};
+			props.active ? `${theme.colors.primary}` : `${theme.colors.text}`};
+		font-weight: ${props => (props.active ? '600' : '400')};
 	}
 	&:last-child::before {
 		position: absolute;
 		bottom: 0px;
 		left: 0;
 		width: 100%;
-		height: 2px;
-		background: ${theme.colors.text};
+		height: 3px;
+		background: ${theme.colors.primary};
 		content: '';
 		transition: transform 0.2s;
 
