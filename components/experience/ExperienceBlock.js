@@ -30,15 +30,18 @@ const ExperienceBlockContainer = styled.div`
 	}
 
 	hr {
-		margin: 0 20px 20px;
+		${props =>
+			props.large ? 'margin: 0 20px 35px;' : 'margin: 0 20px 20px;'}
 		border: 0;
-		border-bottom: 1px solid white;
+		border-bottom: 1px solid;
 	}
 
 	h3,
 	h4,
 	p {
 		margin: 0 0 20px 20px;
+
+		${props => (props.large ? 'margin-bottom: 35px;' : '')}
 
 		span {
 			display: block;
@@ -62,7 +65,7 @@ class ExperienceBlock extends PureComponent {
 		let experience = this.props.experience
 
 		return (
-			<ExperienceBlockContainer>
+			<ExperienceBlockContainer {...this.props}>
 				{experience.type == 'academic' ? (
 					<SchoolIcon width={24} height={24} color={'black'} />
 				) : (

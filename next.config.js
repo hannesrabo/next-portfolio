@@ -53,4 +53,9 @@ const nextConfig = {
 	}
 }
 
-module.exports = withOffline(nextConfig)
+// The service worker does not play nicely with
+// files that are generated dynamically during dev
+// but are static in production.
+if (process.env.NODE_ENV === 'production')
+	module.exports = withOffline(nextConfig)
+else module.exports = nextConfig

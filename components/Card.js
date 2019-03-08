@@ -14,6 +14,6 @@ export const Card = styled.div`
 		props.color ? props.color : props.theme.colors.primary};
 	margin: 0 auto ${props => (props.noSpacer ? '0' : '60px')};
 	${props => (props.noShadow ? '' : 'box-shadow: 2px 3px 5px 1px #00000040;')}
-	padding: 8px 20px;
+	${props => (props.noPadding ? '' : 'padding: 8px 20px;')} 
 	box-sizing: border-box;
 `

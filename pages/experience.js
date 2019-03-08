@@ -13,17 +13,38 @@ import { experiences } from '../data/experiences'
 const CardLayout = styled.div`
 	display: flex;
 	color: white;
-	padding: 15px;
+	min-height: 390px;
+	flex-wrap: wrap;
+
+	@media (min-width: 850px) {
+		flex-wrap: nowrap;
+	}
 
 	h1 {
 		margin-top: 0;
+		margin-right: 20px;
 	}
 
 	> div:first-child {
 		margin-right: 40px;
+		padding: 40px 0 25px 35px;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+
+		@media (min-width: 850px) {
+			display: block;
+			max-width: 120px;
+			padding: 30px;
+			width: auto;
+		}
 
 		> hr {
 			margin: 20px 0;
+			display: none;
+			@media (min-width: 850px) {
+				display: block;
+			}
 		}
 
 		ul {
@@ -33,7 +54,10 @@ const CardLayout = styled.div`
 `
 
 const ExperienceContainer = styled.div`
-	margin: 10px;
+	background: ${props => props.theme.colors.primary_light};
+	flex: 1 0 0;
+	padding: 35px;
+	color: black;
 `
 
 class Experience extends Component {
@@ -69,8 +93,8 @@ class Experience extends Component {
 		let experience = this.props.experience
 
 		return (
-			<Page currentPage="/cv" color={theme.colors.secondary} backTo="/cv">
-				<Card color={theme.colors.secondary}>
+			<Page currentPage="/cv" color={theme.colors.primary} backTo="/cv">
+				<Card color={theme.colors.primary} noPadding>
 					{experience == undefined ? (
 						<p>Looking for the post...</p>
 					) : (
@@ -84,6 +108,9 @@ class Experience extends Component {
 										: ` - ${experience.end_year}`}
 								</h1>
 								<p>
+									{experience.end_year === 'Present'
+										? 'From '
+										: ''}
 									{experience.start_month}
 									{experience.end_year !== 'Present'
 										? ` - ${experience.end_month}`
@@ -96,19 +123,15 @@ class Experience extends Component {
 									))}
 								</ul>
 							</div>
-							<Card
-								color={theme.colors.secondary_light}
-								noShadow
-								noSpacer
-							>
-								<ExperienceContainer>
-									<ExperienceBlock
-										experience={experience}
-										noDate
-										noLink
-									/>
-								</ExperienceContainer>
-							</Card>
+
+							<ExperienceContainer>
+								<ExperienceBlock
+									experience={experience}
+									noDate
+									noLink
+									large
+								/>
+							</ExperienceContainer>
 						</CardLayout>
 					)}
 				</Card>

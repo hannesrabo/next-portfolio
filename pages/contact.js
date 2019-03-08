@@ -5,7 +5,7 @@ import { Card } from '../components/Card'
 import { theme } from '../components/Theme'
 const Container = styled.div`
 	text-align: center;
-
+	min-height: 300px;
 	h1,
 	p {
 		margin: 45px;
