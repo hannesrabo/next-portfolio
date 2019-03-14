@@ -9,3 +9,5 @@ node_modules
 
 out
 static/favicons/
+
+.vscode

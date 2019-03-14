@@ -11,6 +11,8 @@ const Container = styled.div`
 		margin: 45px;
 	}
 `
+
+
 class contact extends Component {
 	render() {
 		return (
