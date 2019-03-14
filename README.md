@@ -1,6 +1,4 @@
-<p align="center">
-    <img src="/static/favicons/android-chrome-192x192.png"><h1>Portfolio</h1>
-</p>
+# Hanes Rabo - Portfolio site
 
 <p align="center">
     <a href="https://circleci.com/gh/hannesrabo/next-portfolio">
