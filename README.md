@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./static/favicons/android-chrome-192x192.png"><h1>Portfolio</h1>
+    <img src="/static/favicons/android-chrome-192x192.png"><h1>Portfolio</h1>
 </p>
 
 <p align="center">
@@ -12,20 +12,16 @@
     <img src="https://img.shields.io/github/license/hannesrabo/next-portfolio.svg">
 </p>
 
-
-
-This is the source code for my portfolio site available at <https://hannesrabo.github.io>. 
+This is the source code for my portfolio site available at <https://hannesrabo.github.io>.
 
 ## Running the code
 
 To run the code for development purposes run:
 
-``````bash
+```bash
 > yarn install
 > yarn start
-``````
-
-
+```
 
 ## Building static
 
@@ -36,8 +32,6 @@ Exporting the page for static hosting can be done using
 > yarn export		# Create static export from site
 ```
 
-
-
 ## Debugging static
 
 Sometimes there is a difference in statically exported pages compared to the dynamic development environment. A static http server has to be installed and the npm package `http-serve` was used here. To test the export before committing use:
@@ -46,10 +40,6 @@ Sometimes there is a difference in statically exported pages compared to the dyn
 > npm install -g http-server
 > yarn stest
 ```
-
-
-
-
 
 ## Look into:
 
