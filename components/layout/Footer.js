@@ -17,6 +17,10 @@ const AlignedText = styled.p`
 	padding: 20px 0 0 20px;
 `
 
+const WhiteLink = styled.a`
+	color: white;
+`
+
 class Footer extends PureComponent {
 	constructor(props) {
 		super(props)
@@ -26,10 +30,10 @@ class Footer extends PureComponent {
 			<FooterContainer>
 				<Card color={this.props.color} backgroundImage noSpacer>
 					<AlignedText>
-						Copyright and Design by Hannes Rabo 2019 &copy;
+						Designed and Developed by Hannes Rabo 2019 <WhiteLink href="https://github.com/hannesrabo/next-portfolio">(project source)</WhiteLink>
 					</AlignedText>
 				</Card>
-			</FooterContainer>
+			</FooterContainer >
 		)
 	}
 }

@@ -27,7 +27,7 @@ const CardLayoutMain = styled.div`
 
 	h1 {
 		padding-bottom: 16px;
-		margin-bottom: 45px;
+		margin-bottom: 40px;
 		border-bottom: 2px solid white;
 	}
 
@@ -90,16 +90,13 @@ const CardLayoutQuickFacts = styled.div`
 		margin-top: 45px;
 		text-align: center;
 	}
-
-	p {
-		/* margin-left: 20px; */
-	}
 `
 
 const CategoryHeader = styled.div`
 	display: flex;
 	flex-direction: row;
 	align-items: flex-end;
+	margin-bottom: 30px;
 `
 
 const LinkContainer = styled.div`
@@ -131,7 +128,7 @@ class index extends Component {
 	render() {
 		return (
 			<Page currentPage="/">
-				<Card backgroundImage>
+				<Card>
 					<CardLayoutMain>
 						<div>
 							<h1>
@@ -142,14 +139,18 @@ class index extends Component {
 							</ItalicText>
 							<p>
 								I am a curious and fast learning computer
-								science student with experience as both research
-								assistant, teaching assistant as well as
-								software developer.
+								science student from KTH with experience both as a research
+								assistant, teaching assistant, as well as a software developer.
 							</p>
 							<p>
-								Apart from that I am also active as a Scout
-								leader and organizer of weekly activities and
-								events multiple times every year
+								My expected graduation is in May 2020 and I am currently looking for
+								an interesting company where I get the oportunity contribute
+								towards an amazing product.
+							</p>
+							<p>
+								Outside of the IT field, I am wild life enthusiast and active as a Scout
+								leader. I help to organize events for youths both on a weekly basis as well as larger
+								events multiple times every year.
 							</p>
 						</div>
 						<img
@@ -173,11 +174,15 @@ class index extends Component {
 									KTH Royal Institute of Techology
 								</ItalicText>
 								<p>
-									Degree program in ICT, Distributed Systems
-									and Data Science. Experience with
-									distributed and cloud computing, and
-									software engineering
+									Degree program in Information and Communication Technology,
+									Master in Software Engineering of Distributed Systems.
 								</p>
+								<ItalicText>Research Assistant</ItalicText>
+								<p>
+									Worked with statistical simulations for
+									phylogenetics.
+								</p>
+								<ItalicText>Teachers Assistant</ItalicText>
 								<p>
 									Have been a teachers assistant in two
 									courses: "Digital Design" and "Operating
@@ -191,16 +196,20 @@ class index extends Component {
 									<h3>Industry Experience</h3>
 								</CategoryHeader>
 								<ItalicText>
-									Software Developer / Engineer
+									Software Developer
 								</ItalicText>
 								<p>
-									Two years experience as professional
-									software developer beside by studies.
+									Two years (part time) experience as professional software developer
+									beside by studies for an IP based two-way radio system.
 								</p>
-								<ItalicText>Research Assistant</ItalicText>
+								<ItalicText>
+									Internship Experience
+								</ItalicText>
 								<p>
-									Working with statistical simulations for
-									phylogenetics.
+									Worked with payment systems based on GCP at Spotify as an intern.
+								</p>
+								<p>
+									Interned as a web developer for WordPress.
 								</p>
 							</div>
 						</div>

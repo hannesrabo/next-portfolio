@@ -4,11 +4,23 @@ import Page from '../components/layout/Page'
 import { Card } from '../components/Card'
 import { theme } from '../components/Theme'
 const Container = styled.div`
-	text-align: center;
 	min-height: 300px;
+	h1 {
+		text-align: center;
+	}
+
 	h1,
 	p {
 		margin: 45px;
+	}
+
+	table {
+		margin: 0 auto;
+	}
+
+	td {
+		padding-right: 20px;
+		padding-bottom: 20px;
 	}
 `
 
@@ -21,9 +33,20 @@ class contact extends Component {
 					<Container>
 						<h1>Contact me!</h1>
 
-						<p>Email: hannes.rabo@gmail.com</p>
-
-						<p>Phone: Upon request</p>
+						<table>
+							<tr>
+								<td>Email</td>
+								<td><a href="mailto:hannes.rabo@gmail.com">hannes.rabo@gmail.com</a></td>
+							</tr>
+							<tr>
+								<td>LinkedIn</td>
+								<td><a href="https://www.linkedin.com/in/hannes-rabo/">https://www.linkedin.com/in/hannes-rabo/</a></td>
+							</tr>
+							<tr>
+								<td>GitHub</td>
+								<td><a href="https://github.com/hannesrabo">https://github.com/hannesrabo</a></td>
+							</tr>
+						</table>
 					</Container>
 				</Card>
 			</Page>
